@@ -31,20 +31,6 @@ namespace Csharp_Call_Python_Dkid
                 startInfo.UseShellExecute = false;
                 Process p = Process.Start(startInfo);
 
-                // Gọi start là đã tạo song file mp3 cạnh file python mà t chạy
-                // Vì ta muôn play nên cần biết tên file -> thằng python nó print cho mk tên file rồi
-                // nắm đầu nó và chạy âm thanh bằng thư viên playSound của python!
-                //p.WaitForExit();
-                //string fn;
-                //while (!p.StandardOutput.EndOfStream)
-                //{
-                //    fn = p.StandardOutput.ReadLine(); // lấy tên file
-                //}
-                // play thôi
-                // player.URL = đường dẫn + fn
-
-                // => Nhưng vì mk muốn phát luôn thì tạm thời như thế! sử dụng playsound của puthon phát
-
             }
             catch (Exception ex)
             {
@@ -57,7 +43,7 @@ namespace Csharp_Call_Python_Dkid
             // Gọi open file để lấy 1 file mp3! 
             openFileDialog1.Filter = "MP3 Audio File|*.mp3";
             openFileDialog1.Title = "Chọn tệp MP3 để mở";
-            string filePath ="";
+            string filePath = "";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 filePath = openFileDialog1.FileName;
@@ -83,16 +69,10 @@ namespace Csharp_Call_Python_Dkid
                 {
                     // Chương trình chính đợi thằng process chạy! 
                     exe.WaitForExit();
-                    // cái này là để đọc từng dòng đầu ra -> đọc đến khi k đọc đc nữa
-                    while (!exe.StandardOutput.EndOfStream)
-                    {
-                        string line = exe.StandardOutput.ReadLine();
-                        textBox2.AppendText(line);
-                    }
                 }
-            }catch (Exception ex) { ex.ToString(); }
-          
-
+                  
+            }
+            catch (Exception ex) { ex.ToString(); }
         }
     }
 }

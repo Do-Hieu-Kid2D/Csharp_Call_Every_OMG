@@ -68,7 +68,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(165, 503);
+            textBox2.Location = new Point(253, 394);
             textBox2.Margin = new Padding(4);
             textBox2.Name = "textBox2";
             textBox2.ReadOnly = true;
@@ -77,7 +77,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(463, 374);
+            button2.Location = new Point(537, 257);
             button2.Name = "button2";
             button2.Size = new Size(321, 105);
             button2.TabIndex = 4;
@@ -94,7 +94,7 @@
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 255, 192);
-            ClientSize = new Size(1040, 576);
+            ClientSize = new Size(1066, 456);
             Controls.Add(button2);
             Controls.Add(textBox2);
             Controls.Add(button1);
